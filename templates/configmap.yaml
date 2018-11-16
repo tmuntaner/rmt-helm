@@ -1,10 +1,10 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: {{ include "rmt-helm.fullname" . }}
+  name: {{ include "rmt.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "rmt-helm.name" . }}
-    helm.sh/chart: {{ include "rmt-helm.chart" . }}
+    app.kubernetes.io/name: {{ include "rmt.name" . }}
+    helm.sh/chart: {{ include "rmt.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 data:
@@ -12,7 +12,7 @@ data:
     database:
       host: {{ template "mariadb.fullname" . }}
       database: {{ .Values.mariadb.db.name }}
-      username: {{ .Values.mariadb.db.user }}
+      username: {{ .Values.mariadb.db.username }}
       password: {{ .Values.mariadb.db.password }}
     scc:
       username: {{ .Values.rmtServer.scc.username }}
