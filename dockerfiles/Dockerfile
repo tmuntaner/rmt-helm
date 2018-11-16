@@ -3,6 +3,7 @@ FROM opensuse/leap:15
 RUN zypper --non-interactive up && \
     zypper --non-interactive install --no-recommend rmt-server
 
+USER _rmt
 WORKDIR /usr/share/rmt
 
 EXPOSE 4224
