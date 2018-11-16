@@ -9,6 +9,12 @@ rmtServer:
     username:
     password:
 
+persistence:
+  enabled: true
+  # storageClass: "-"
+  accessMode: ReadWriteOnce
+  size: 100Gi
+
 image:
   repository: tmuntan1/rmt
   tag: latest
